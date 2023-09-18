@@ -1,0 +1,89 @@
+<!-- views/pages/accueil.ejs -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+
+    <body class="container">
+        <header>
+            <%- include('../partials/header') %>   
+        </header>
+        <main>
+            <div class="jumbotron text-center">
+                <h1>Résumé de la commande</h1>
+                <h2>Détails</h2>
+                <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">qte</th>
+                        <th scope="col">taille</th>
+                        <th scope="col">Pepperoni</th>
+                        <th scope="col">Mozarella</th>
+                        <th scope="col">Oeuf</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%=type%></td>
+                        <td><%=qte%></td>
+                        <td><%=taille%></td>
+                        <td><%=pepperoni%></td>
+                        <td><%=mozarella%></td>
+                        <td><%=oeuf%></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <br/>
+                  <h2>Facture</h2>
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Hawaienne</th>
+                        <th scope="col">All-dressed</th>
+                        <th scope="col">Sicilienne</th>
+                        <th scope="col">Ingredient extra</th>
+                        <th scope="col">Small</th>
+                        <th scope="col">medium</th>
+                        <th scope="col">large</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>7.00$</td>
+                        <td>8.10$</td>
+                        <td>6.30$</td>
+                        <td>+0.50$</td>
+                        <td>x 0.8</td>
+                        <td>x 1</td>
+                        <td>x 1.2</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h3>Total sans taxes: <%=prixST%> $</h3>
+                  <h3>TVQ: <%=TVQ%> $</h3>
+                  <h3>TPS: <%=TPS%> $</h3>
+                  <h3>Total avec taxes: <%=prixAT%> $</h3>
+                  <br/>
+                  <h2>Informations</h2>
+                  Adresse: <%=adresse%><br/>
+                  Nom: <%=nom%><br/>
+                  Prenom: <%=prenom%><br/>
+                  Code postal: <%=codepostal%><br/>
+                  Courriel: <%=courriel%><br/>
+                  Telephone: <%=telephone%><br/>
+                  Paiement: <%=paiement%><br/>
+                  <h3>Distance entre l'adresse de livraison et Joss pizza</h3>
+                  
+
+            </div>
+        </main>
+        <footer>
+            <%- include('../partials/footer') %>    
+        </footer>
+    </body>
+
+</html>

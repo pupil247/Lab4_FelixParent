@@ -1,0 +1,115 @@
+<!-- views/pages/accueil.ejs -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+
+    <body class="container">
+        <header>
+            <%- include('../partials/header') %>   
+        </header>
+        <main>
+            <div class="jumbotron text-center">
+                <h1>Bienvenue chez Joss Pizza</h1>
+                <img src=https://s3-media0.fl.yelpcdn.com/bphoto/nOJR6hcJn-sae_dtG6ouvQ/348s.jpg class="rounded-circle">
+                <h2>Commandez dès maintenant</h2>
+                <form method="post">
+                  <div class="form-group">
+                    Quel type de pizza?
+                    <br/>
+                    <input type="radio" class="form-check-input" name="type" id='sicilienne'value="Sicilienne" checked>
+                    <label for="type" class="form-check-label">Sicilienne</label>
+                    <br/>
+                    <input type="radio" class="form-check-input" name="type" id='hawaienne'value="Hawaienne">
+                    <label for="type" class="form-check-label">Hawaienne</label>
+                    <br/>
+                    <input type="radio" class="form-check-input" name="type" id='alldressed'value="All Dressed">
+                    <label for="type" class="form-check-label">All Dressed</label>
+                    <br/>
+                  </div>
+                  <div class="form-group">
+                    Quel quantité?
+                    <br/>
+                    <input type="number" name="qte" min="1" max="99" required value='1'>
+                  </div>
+                  <div class="form-group">
+                    Quelle taille?
+                    <br/>
+                    <select name="taille">
+                      <option value="Small">Small</option>
+                      <option value="Medium">Medium</option>
+                      <option value="Large">Large</option>
+                    </select>
+                  </div> 
+                  <div class="form-group">
+                    Quels ingrédients supplémentaires?
+                    <br/>
+  
+                    <input type="checkbox" class="form-check-input" name="pepperoni" value="Oui" />
+                    <label for="pepperoni" class="form-check-label">Pepperoni</label>
+                    <br/>
+                    <input type="checkbox" class="form-check-input" name="mozarella" value="Oui" />
+                    <label for="mozarella" class="form-check-label">Mozarella</label>
+                    <br/>
+                    <input type="checkbox" name="oeuf" value="Oui" />
+                    <label for="oeuf">Oeuf</label>
+                    <br/>
+                  </div>
+                  <div class="form-group">
+                    Quelle adresse?
+                    <br/>
+                    <textarea id="adresse" name="adresse" rows="2" cols="20"><%=adresse%></textarea>
+                  </div>
+                  <div class="form-group">
+                    Code postal? Exemple : "A1A 1A1"
+                    <br/>
+                    <input type="text" name="codepostal" pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z]●?[0-9][A-Z][0-9]$" value=<%=codepostal%>>
+                  </div>
+                  <div class="form-group">
+                    Nom
+                    <br/>
+                    <input type="text" name="nom" pattern="^[a-zA-Z]+$" value=<%=nom%>>
+                  </div>
+                  <div class="form-group">
+                    Prénom
+                    <br/>
+                    <input type="text" name="prenom" pattern="^[a-zA-Z]+$" value=<%=prenom%>>
+                  </div>
+                  <div class="form-group">
+                    Téléphone
+                    <br/>
+                    <input type="text" name="tel" pattern="^(\(\d{3}\)|\d{3})-?\d{3}-?\d{4}$" value=<%=telephone%>>
+                  </div>
+                  <div class="form-group">
+                    Courriel
+                    <br/>
+                    <input type="email" name="courriel" pattern="^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" value=<%=courriel%>>
+                  </div>
+                  <div class="form-group">
+                    Mode de paiement
+                    <br/>
+                    <select name="paiement">
+                      <option value="Cash">Cash</option>
+                      <option value="Mastercard">Mastercard</option>
+                      <option value="Visa">Visa</option>
+                      <option value="American Express">American Express</option>
+                    </select>
+                  </div>
+                  <br/>
+                  <button type="submit" class="btn btn-primary">Passer la commande</button>
+                </form>
+            </div>
+        </main>
+        <style>
+          input:invalid {
+            border: 2px solid red;
+          }
+          </style>
+        <footer>
+            <%- include('../partials/footer') %>    
+        </footer>
+    </body>
+</html>
