@@ -39,7 +39,9 @@ router.post('/', function(req,res,next){
     paiement: req.body.paiement
   });
 });
-
+router.use(function(req,res,next){
+  res.render("pages/error");
+});
 function calculPrix(req){
   let prix = 0.0;
   switch(req.body.type)

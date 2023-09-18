@@ -1,3 +1,26 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!-- views/pages/error.ejs -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+
+    <body class="container">
+        <header>
+            <%- include('../partials/header') %>   
+        </header>
+        <main>
+            <div class="jumbotron text-center">
+                <h1>404</h1>
+                <h2>Vous vous êtes perdu! La page que vous voulez n'existe pas!</h2>
+                <img src=https://cdn.dribbble.com/users/212949/screenshots/856197/media/da184ca3dabff52a03119a3d6922fbb9.png?resize=400x300&vertical=center class="rounded">
+            </div>
+        </main>
+        <footer>
+            <%- include('../partials/footer') %>    
+        </footer>
+    </body>
+
+</html>
