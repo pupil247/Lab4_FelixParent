@@ -1,3 +1,8 @@
+/**
+ * file: index.js
+ * author: Felix Parent
+ */
+
 var express = require('express');
 var router = express.Router();
 
@@ -12,8 +17,7 @@ router.get('/', function(req, res, next) {
     codepostal: "J4L8P4",
     telephone: "123-456-7890",
   });
-});
-router.post('/', function(req,res,next){
+}).post('/', function(req,res,next){
   let prixSansTaxes = calculPrix(req);
   let TVQ = prixSansTaxes * 0.10;
   let TPS = prixSansTaxes * 0.05;
@@ -34,14 +38,16 @@ router.post('/', function(req,res,next){
     pepperoni: req.body.pepperoni,
     mozarella: req.body.mozarella,
     oeuf: req.body.oeuf,
-    TVQ: TVQ,
-    TPS: TPS,
+    TVQ: TVQ.toFixed(2),
+    TPS: TPS.toFixed(2),
     paiement: req.body.paiement
   });
 });
+
 router.use(function(req,res,next){
   res.render("pages/error");
 });
+
 function calculPrix(req){
   let prix = 0.0;
   switch(req.body.type)
@@ -76,4 +82,5 @@ function calculPrix(req){
   prix *= req.body.qte;
   return prix;
 }
+
 module.exports = router;
